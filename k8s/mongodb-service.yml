@@ -7,5 +7,7 @@ spec:
   selector:
     app: mongodb
   ports:
-  - port: 27017
-    targetPort: 27017
+    - protocol: TCP
+      port: 27017 # Port exposed by the Service
+      targetPort: 27017 # Port exposed by the MongoDB container
+  type: ClusterIP # Internal cluster access
